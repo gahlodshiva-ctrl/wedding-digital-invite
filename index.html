@@ -2,437 +2,1913 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <!-- Mobile Viewport with iPhone notch & dynamic island safe area support -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  
-  <title>Wedding Invitation | Sophia & Alexander</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Wedding Invitation | Royal Celebration</title>
   
   <!-- Browser Theme & Mobile Status Bar -->
-  <meta name="theme-color" content="#2e1a24" />
+  <meta name="theme-color" content="#4a060e" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="format-detection" content="telephone=no" />
-
-  <!-- Favicon (Golden Rings Emblem) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💍</text></svg>" />
-  <link rel="apple-touch-icon" href="https://gahlodshiva-ctrl.github.io/wedding-digital-invite/assets/images/og-preview.jpg" />
-
-  <!-- =========================================================================
-       COMPLETE OPEN GRAPH & SOCIAL PREVIEW METADATA
-       (Optimized for WhatsApp, iMessage, Facebook, Telegram, and Instagram)
-       ========================================================================= -->
-  <meta name="description" content="You are cordially invited to celebrate the wedding of Sophia & Alexander. Tap to open our interactive envelope, listen to our song, view our photos, and get directions." />
-  
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://gahlodshiva-ctrl.github.io/wedding-digital-invite/" />
-  <meta property="og:site_name" content="Sophia & Alexander's Wedding" />
-  <meta property="og:title" content="💍 Sophia & Alexander Are Getting Married! You're Cordially Invited" />
-  <meta property="og:description" content="Tap to open the royal envelope, hear our song, view our love story photo memories, and navigate via Google Maps." />
-  <meta property="og:image" content="https://gahlodshiva-ctrl.github.io/wedding-digital-invite/assets/images/og-preview.jpg" />
-  <meta property="og:image:secure_url" content="https://gahlodshiva-ctrl.github.io/wedding-digital-invite/assets/images/og-preview.jpg" />
-  <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Sophia & Alexander Wedding Invitation Preview" />
-  <meta property="og:locale" content="en_US" />
-
-  <!-- TWITTER / X CARD METADATA -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="💍 Sophia & Alexander Are Getting Married!" />
-  <meta name="twitter:description" content="Tap to open the royal envelope, hear our song, view our love story photos, and navigate to the venue." />
-  <meta name="twitter:image" content="https://gahlodshiva-ctrl.github.io/wedding-digital-invite/assets/images/og-preview.jpg" />
-  <meta name="twitter:image:alt" content="Wedding of Sophia & Alexander" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Rozha+One&display=swap" rel="stylesheet" />
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/envelope.css" />
-  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ==========================================================================
+       ROYAL INDIAN WEDDING THEME - MOBILE FIRST
+       ========================================================================== */
+    :root {
+      --maroon-deep: #4a060e;
+      --maroon-rich: #6b0f1a;
+      --maroon-light: #8c1b28;
+      --gold-primary: #d4af37;
+      --gold-light: #f5e2a3;
+      --gold-dark: #997a15;
+      --gold-gradient: linear-gradient(135deg, #f7e5a9 0%, #d4af37 50%, #997a15 100%);
+      --gold-shimmer: linear-gradient(90deg, #d4af37, #fff0b8, #d4af37);
+      --bg-cream: #faf5ed;
+      --bg-card: #ffffff;
+      --text-dark: #2c1a1d;
+      --text-muted: #6e595c;
+      --text-gold: #aa820a;
+      
+      /* Ceremony Palette Swatches */
+      --mata-pujan-color: #d7c4a3;
+      --haldi-color: #fbc02d;
+      --mehendi-color: #2e7d32;
+      --sangeet-color: #8e24aa;
+      --baraat-color: #b71c1c;
+      --reception-color: #1a237e;
+
+      --font-royal: 'Cinzel', serif;
+      --font-script: 'Great Vibes', cursive;
+      --font-body: 'Montserrat', sans-serif;
+      --font-hindi-style: 'Rozha One', serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: #1a0205;
+      color: var(--text-dark);
+      line-height: 1.5;
+      overflow-x: hidden;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Mobile Container Wrapper */
+    .mobile-frame {
+      width: 100%;
+      max-width: 440px;
+      min-height: 100vh;
+      background-color: var(--bg-cream);
+      position: relative;
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(245, 226, 163, 0.25) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(140, 27, 40, 0.08) 0%, transparent 40%);
+    }
+
+    /* Floating Petals Canvas */
+    #petals-canvas {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 440px;
+      height: 100%;
+      pointer-events: none;
+      z-index: 99;
+    }
+
+    /* ==========================================================================
+       1. ENVELOPE OPENING SCREEN (Royal Wax Seal)
+       ========================================================================== */
+    .envelope-screen {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 440px;
+      height: 100%;
+      background: radial-gradient(ellipse at center, #42060e 0%, #1c0104 100%);
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+      transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), visibility 1s ease;
+    }
+
+    .envelope-screen.opened {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .env-shree-ganesh {
+      text-align: center;
+      color: var(--gold-primary);
+      font-size: 0.9rem;
+      letter-spacing: 0.2em;
+      margin-bottom: 8px;
+      font-weight: 600;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+
+    .env-royal-title {
+      font-family: var(--font-royal);
+      color: #fff8eb;
+      font-size: 1.5rem;
+      text-align: center;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .env-royal-title span {
+      display: block;
+      font-family: var(--font-script);
+      font-size: 2.2rem;
+      color: var(--gold-light);
+      text-transform: none;
+      letter-spacing: normal;
+      margin-top: -4px;
+    }
+
+    /* 3D Envelope Element */
+    .envelope-box {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      perspective: 1000px;
+      cursor: pointer;
+      filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.6));
+    }
+
+    .env-body {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: #73131e;
+      border-radius: 6px;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      overflow: visible;
+    }
+
+    .env-flap-left {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-top: 100px solid transparent;
+      border-bottom: 100px solid transparent;
+      border-left: 150px solid #5a0c15;
+      z-index: 3;
+    }
+
+    .env-flap-right {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-top: 100px solid transparent;
+      border-bottom: 100px solid transparent;
+      border-right: 150px solid #630f18;
+      z-index: 3;
+    }
+
+    .env-flap-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-left: 150px solid transparent;
+      border-right: 150px solid transparent;
+      border-bottom: 110px solid #4a060e;
+      z-index: 3;
+    }
+
+    .env-flap-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-left: 150px solid transparent;
+      border-right: 150px solid transparent;
+      border-top: 120px solid #7a1520;
+      transform-origin: top center;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.2s 0.3s;
+      z-index: 4;
+      filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3));
+    }
+
+    .env-letter-card {
+      position: absolute;
+      inset: 8px;
+      background: #fffdf9;
+      border-radius: 4px;
+      border: 1px solid var(--gold-primary);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 12px;
+      transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+      z-index: 2;
+    }
+
+    .env-letter-card .card-ganesh {
+      width: 36px;
+      height: auto;
+      margin-bottom: 4px;
+    }
+
+    .env-letter-card .card-couple {
+      font-family: var(--font-script);
+      font-size: 1.5rem;
+      color: var(--maroon-rich);
+    }
+
+    .env-letter-card .card-date {
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      color: var(--gold-dark);
+      text-transform: uppercase;
+    }
+
+    /* Wax Seal Button */
+    .env-wax-seal {
+      position: absolute;
+      top: 92px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 60px;
+      background: radial-gradient(circle at 35% 35%, #ffd700 0%, #d4af37 50%, #8a6c08 100%);
+      border-radius: 50%;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5), inset 0 2px 4px rgba(255,255,255,0.6);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+
+    .env-wax-seal-inner {
+      font-family: var(--font-hindi-style);
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #3b060c;
+      line-height: 1;
+    }
+
+    .env-wax-seal-label {
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #4a060e;
+      text-transform: uppercase;
+    }
+
+    /* Tap prompt button */
+    .tap-to-open-prompt {
+      margin-top: 36px;
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid var(--gold-primary);
+      padding: 10px 22px;
+      border-radius: 40px;
+      color: var(--gold-light);
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation: pulseGlow 2s infinite ease-in-out;
+      cursor: pointer;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.3); }
+      50% { box-shadow: 0 0 24px rgba(212, 175, 55, 0.7); transform: scale(1.02); }
+    }
+
+    /* Envelope Opening Actions */
+    .envelope-box.opening .env-wax-seal {
+      transform: translateX(-50%) scale(1.3);
+      opacity: 0;
+    }
+    .envelope-box.opening .env-flap-top {
+      transform: rotateX(180deg);
+      z-index: 1;
+    }
+    .envelope-box.opening .env-letter-card {
+      transform: translateY(-90px);
+      z-index: 5;
+    }
+
+    /* ==========================================================================
+       2. FLOATING AUDIO & NAVIGATION BAR
+       ========================================================================= */
+    .top-floating-bar {
+      position: fixed;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 28px);
+      max-width: 412px;
+      z-index: 90;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      pointer-events: none;
+    }
+
+    .audio-pill {
+      pointer-events: auto;
+      background: rgba(42, 6, 12, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--gold-primary);
+      border-radius: 30px;
+      padding: 5px 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #fff;
+      font-size: 0.75rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    }
+
+    .audio-btn {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--gold-gradient);
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #3b060c;
+      cursor: pointer;
+    }
+
+    .audio-btn.playing {
+      animation: spinRecord 4s linear infinite;
+    }
+
+    @keyframes spinRecord {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .btn-edit-details {
+      pointer-events: auto;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--gold-primary);
+      border-radius: 30px;
+      padding: 6px 14px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--maroon-rich);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       3. FIRST PAGE: MUGHAL ROYAL ARCH & SLOW ZOOM BACKGROUND
+       ========================================================================= */
+    .hero-arch-section {
+      position: relative;
+      min-height: 94vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 18px 30px 18px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* The Mughal Arch Frame */
+    .arch-frame-container {
+      position: relative;
+      width: 100%;
+      max-width: 360px;
+      height: 520px;
+      margin: 0 auto;
+      border-radius: 180px 180px 16px 16px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(50, 10, 20, 0.2);
+      border: 2px solid var(--gold-primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px 20px 24px 20px;
+      background: #380810;
+    }
+
+    /* Gold Inner Filigree Border */
+    .arch-frame-container::before {
+      content: "";
+      position: absolute;
+      inset: 6px;
+      border: 1px solid rgba(245, 226, 163, 0.6);
+      border-radius: 174px 174px 12px 12px;
+      pointer-events: none;
+      z-index: 4;
+    }
+
+    /* Slowly Zooming Blurred Photo Background inside Arch */
+    .arch-background-zoom {
+      position: absolute;
+      inset: -20px;
+      background-size: cover;
+      background-position: center;
+      filter: blur(2.5px) brightness(0.65);
+      animation: archZoom 16s ease-in-out infinite alternate;
+      z-index: 1;
+      transform-origin: center center;
+    }
+
+    @keyframes archZoom {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.15); }
+    }
+
+    /* Arch Content Layer */
+    .arch-content {
+      position: relative;
+      z-index: 5;
+      width: 100%;
+      color: #fff9ed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .ganesh-symbol {
+      font-size: 2.2rem;
+      color: var(--gold-light);
+      margin-bottom: 2px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+      font-family: var(--font-hindi-style);
+    }
+
+    .invitation-shloka {
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 12px;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+    }
+
+    .family-invitation-lead {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #fce8cc;
+      margin-bottom: 8px;
+    }
+
+    /* Couple Names */
+    .couple-title-groom,
+    .couple-title-bride {
+      font-family: var(--font-royal);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.1;
+      text-shadow: 0 3px 12px rgba(0,0,0,0.8);
+      letter-spacing: 0.05em;
+    }
+
+    .couple-ampersand-sign {
+      font-family: var(--font-script);
+      font-size: 2.6rem;
+      color: var(--gold-light);
+      line-height: 0.9;
+      margin: 2px 0;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+
+    .parentage-box {
+      font-size: 0.72rem;
+      color: #f7e6d2;
+      line-height: 1.4;
+      margin: 8px 0;
+      max-width: 290px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.9);
+    }
+
+    .parentage-box strong {
+      color: var(--gold-light);
+    }
+
+    .family-closing-line {
+      font-family: var(--font-script);
+      font-size: 1.45rem;
+      color: var(--gold-light);
+      margin-top: 10px;
+      line-height: 1.2;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+    }
+
+    /* ==========================================================================
+       4. AUSPICIOUS WEDDING & PHERAS DETAILS
+       ========================================================================= */
+    .section-card {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 24px 20px;
+      margin: 20px 16px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      box-shadow: 0 8px 24px rgba(60, 20, 25, 0.06);
+      position: relative;
+    }
+
+    .section-header-tag {
+      text-align: center;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .section-main-title {
+      font-family: var(--font-royal);
+      text-align: center;
+      font-size: 1.55rem;
+      color: var(--maroon-deep);
+      margin-bottom: 6px;
+    }
+
+    .golden-divider-ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 8px auto 18px auto;
+      color: var(--gold-primary);
+    }
+
+    .golden-divider-ornament::before,
+    .golden-divider-ornament::after {
+      content: "";
+      width: 40px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+    }
+
+    /* Wedding Highlight Box */
+    .wedding-highlight-banner {
+      background: linear-gradient(135deg, #570b14 0%, #3d050d 100%);
+      color: #fff;
+      border-radius: 12px;
+      padding: 18px;
+      text-align: center;
+      border: 1px solid var(--gold-primary);
+      box-shadow: 0 6px 18px rgba(74, 6, 14, 0.25);
+      margin-bottom: 18px;
+    }
+
+    .pheras-muhurat-badge {
+      display: inline-block;
+      background: rgba(212, 175, 55, 0.2);
+      border: 1px solid var(--gold-primary);
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+
+    .wedding-big-date {
+      font-family: var(--font-royal);
+      font-size: 1.35rem;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .wedding-pheras-time {
+      font-size: 0.95rem;
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+
+    /* Countdown Grid */
+    .countdown-grid-wrap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .countdown-box-mini {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 8px 4px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .countdown-val {
+      font-family: var(--font-royal);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+
+    .countdown-txt {
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #f7e6d2;
+      margin-top: 3px;
+    }
+
+    /* Venue Box */
+    .venue-info-box {
+      margin-top: 16px;
+      text-align: center;
+    }
+
+    .venue-name-lead {
+      font-family: var(--font-royal);
+      font-size: 1.15rem;
+      color: var(--maroon-deep);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .venue-address-lead {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      margin-bottom: 16px;
+    }
+
+    .map-action-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn-gold-action {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 20px;
+      background: var(--gold-gradient);
+      color: #3b060c;
+      font-weight: 700;
+      font-size: 0.85rem;
+      border-radius: 30px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .btn-secondary-action {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 18px;
+      background: #ffffff;
+      color: var(--maroon-deep);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      font-weight: 600;
+      font-size: 0.82rem;
+      border-radius: 30px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Embedded Map Frame */
+    .venue-map-embed {
+      width: 100%;
+      height: 220px;
+      border-radius: 12px;
+      border: 1px solid var(--gold-primary);
+      margin-top: 14px;
+      overflow: hidden;
+    }
+
+    .venue-map-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* ==========================================================================
+       5. FUNCTIONS & CEREMONIES (INDIAN WEDDING TIMELINE)
+       ========================================================================= */
+    .ceremonies-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .ceremony-card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 18px 16px;
+      border-left: 5px solid var(--theme-color, #d4af37);
+      border-top: 1px solid rgba(0,0,0,0.06);
+      border-right: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+      transition: transform 0.2s ease;
+    }
+
+    .ceremony-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 6px;
+    }
+
+    .ceremony-name {
+      font-family: var(--font-royal);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--maroon-deep);
+    }
+
+    .ceremony-swatch-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      background: #fbf8f2;
+      border: 1px solid rgba(0,0,0,0.08);
+      color: var(--text-dark);
+    }
+
+    .ceremony-swatch-circle {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--theme-color, #d4af37);
+      display: inline-block;
+    }
+
+    .ceremony-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: var(--gold-dark);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .ceremony-meta-row span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .ceremony-venue-text {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .ceremony-dress-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      padding: 3px 8px;
+      background: rgba(212, 175, 55, 0.12);
+      color: #6d5408;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       6. "OUR STORY" PHOTO CAROUSEL
+       ========================================================================= */
+    .carousel-section-wrap {
+      position: relative;
+      margin-top: 14px;
+    }
+
+    .carousel-track-container {
+      overflow: hidden;
+      border-radius: 12px;
+      position: relative;
+      background: #000;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      border: 1px solid var(--gold-primary);
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      width: 100%;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      height: 380px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .carousel-caption-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 30px 16px 14px 16px;
+      background: linear-gradient(180deg, transparent 0%, rgba(30, 4, 8, 0.9) 100%);
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .carousel-caption-title {
+      font-family: var(--font-script);
+      font-size: 1.5rem;
+      color: var(--gold-light);
+      line-height: 1.1;
+      margin-bottom: 2px;
+    }
+
+    .carousel-caption-sub {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #e0d0c0;
+    }
+
+    /* Carousel Nav Arrows */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      background: rgba(59, 6, 12, 0.75);
+      border: 1px solid var(--gold-primary);
+      border-radius: 50%;
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      font-size: 1rem;
+    }
+
+    .carousel-btn-prev { left: 8px; }
+    .carousel-btn-next { right: 8px; }
+
+    /* Carousel Indicators */
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #d4af37;
+      opacity: 0.3;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .carousel-dot.active {
+      opacity: 1;
+      width: 22px;
+      border-radius: 10px;
+      background: var(--maroon-deep);
+    }
+
+    /* ==========================================================================
+       7. RSVP & BLESSINGS
+       ========================================================================= */
+    .rsvp-form-container input,
+    .rsvp-form-container select,
+    .rsvp-form-container textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #d8cbbe;
+      border-radius: 8px;
+      font-size: 16px; /* Prevents iOS auto zoom */
+      margin-bottom: 12px;
+      font-family: var(--font-body);
+      background: #fffdfb;
+    }
+
+    .rsvp-form-container input:focus,
+    .rsvp-form-container select:focus,
+    .rsvp-form-container textarea:focus {
+      outline: none;
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+    }
+
+    /* ==========================================================================
+       8. MODALS (LIGHTBOX & IN-PAGE EDIT CUSTOMIZER)
+       ========================================================================= */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 2, 4, 0.9);
+      z-index: 2000;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .lightbox-img-view {
+      max-width: 100%;
+      max-height: 80vh;
+      border-radius: 8px;
+      border: 2px solid var(--gold-primary);
+    }
+
+    /* Edit Details Modal Drawer */
+    .edit-modal-card {
+      background: #ffffff;
+      width: 100%;
+      max-width: 400px;
+      max-height: 88vh;
+      border-radius: 16px;
+      padding: 22px 20px;
+      overflow-y: auto;
+      border: 1px solid var(--gold-primary);
+    }
+
+    .edit-modal-title {
+      font-family: var(--font-royal);
+      color: var(--maroon-deep);
+      font-size: 1.25rem;
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .edit-field-group {
+      margin-bottom: 14px;
+    }
+
+    .edit-field-label {
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--maroon-deep);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .edit-field-input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #d0c2b2;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    /* Footer */
+    .royal-invite-footer {
+      text-align: center;
+      padding: 40px 16px 80px 16px;
+      background: #f3ece1;
+      border-top: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .footer-blessing-ganesh {
+      font-family: var(--font-hindi-style);
+      font-size: 1.8rem;
+      color: var(--gold-primary);
+      margin-bottom: 4px;
+    }
+
+    .footer-couple-monogram {
+      font-family: var(--font-script);
+      font-size: 2.5rem;
+      color: var(--maroon-deep);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Floating Falling Rose Petals & Golden Confetti Canvas -->
+  <!-- Falling Golden Sparkles & Rose Petals Canvas -->
   <canvas id="petals-canvas"></canvas>
 
-  <!-- =========================================================================
-       1. INTERACTIVE 3D ENVELOPE SCREEN (Initial View)
-       ========================================================================= -->
-  <section class="envelope-screen" id="envelope-screen">
-    <div class="env-bg-stars"></div>
+  <div class="mobile-frame">
 
-    <div class="env-intro-text">
-      <div class="env-intro-subtitle">You are cordially invited</div>
-      <h1 class="env-intro-title">The Wedding Celebration</h1>
-    </div>
-
-    <!-- 3D Envelope Wrapper -->
-    <div class="envelope-wrapper" id="envelope-wrapper" role="button" aria-label="Tap to open wedding invitation envelope">
+    <!-- =========================================================================
+         1. 3D ROYAL ENVELOPE (INITIAL VIEW)
+         ========================================================================= -->
+    <div class="envelope-screen" id="envelope-screen">
+      <div class="env-shree-ganesh">|| श्री गणेशाय नमः ||</div>
       
-      <!-- Popping Polaroids Preview Container (bursts outward when tapped!) -->
-      <div id="envelope-pop-photos"></div>
-
-      <div class="envelope">
-        <!-- Inside Back -->
-        <div class="envelope-back"></div>
-
-        <!-- The Letter Card inside (slides up on tap) -->
-        <div class="letter-card" id="envelope-letter">
-          <div class="letter-card-inner">
-            <div class="letter-monogram">S & A</div>
-            <div class="letter-text">Join Us to Celebrate</div>
-            <div class="letter-date">October 24, 2026</div>
-          </div>
-        </div>
-
-        <!-- Envelope Fold Flaps -->
-        <div class="flap-left"></div>
-        <div class="flap-right"></div>
-        <div class="flap-bottom"></div>
-        <div class="flap-top"></div>
-
-        <!-- Golden Wax Seal (click to open) -->
-        <div class="wax-seal" id="wax-seal" title="Tap to Open">
-          <span class="wax-seal-inner">S&A</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tap to Open Prompt -->
-    <div class="tap-prompt" id="tap-prompt">
-      <span class="tap-icon-animated">✉️</span>
-      <span>Tap Envelope to Open</span>
-    </div>
-  </section>
-
-
-  <!-- =========================================================================
-       2. FLOATING MUSIC PLAYER BAR
-       ========================================================================= -->
-  <div class="floating-music-bar" id="floating-music-bar">
-    <button class="music-disk-btn" id="music-disk-btn" aria-label="Toggle Background Music">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-        <polygon points="5 3 19 12 5 21 5 3"></polygon>
-      </svg>
-    </button>
-    <div class="music-info">
-      <span class="music-title" id="music-title">Wedding Melodies</span>
-      <span class="music-status" id="music-status">Background Music</span>
-    </div>
-    <div class="music-wave-bars">
-      <div class="music-wave-bar"></div>
-      <div class="music-wave-bar"></div>
-      <div class="music-wave-bar"></div>
-    </div>
-  </div>
-
-
-  <!-- =========================================================================
-       3. MAIN INVITATION CONTENT (Revealed after envelope tap)
-       ========================================================================= -->
-  <main id="main-content">
-
-    <!-- HERO SECTION -->
-    <header class="hero-section">
-      <div class="hero-invitation-verse">Together with their families</div>
-      
-      <h1 class="hero-couple-names">
-        <span class="hero-bride-name">Sophia</span>
-        <span class="hero-ampersand">&</span>
-        <span class="hero-groom-name">Alexander</span>
-      </h1>
-
-      <p class="hero-intro-lead">
-        Request the pleasure of your company as they unite in holy matrimony and exchange their sacred vows.
-      </p>
-
-      <div class="hero-date-badge">
-        <span class="hero-date-text">Saturday, October 24, 2026</span>
+      <div class="env-royal-title">
+        The Wedding Of
+        <span id="env-couple-preview">Aarav & Diya</span>
       </div>
 
-      <div class="hero-actions">
-        <a href="#rsvp-section" class="btn btn-primary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M20 6L9 17l-5-5"></path>
-          </svg>
-          RSVP Today
-        </a>
-        <a href="#location-section" class="btn btn-secondary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-            <circle cx="12" cy="10" r="3"></circle>
-          </svg>
-          View Location
-        </a>
-      </div>
-
-      <!-- COUNTDOWN TIMER -->
-      <div class="countdown-container">
-        <div class="countdown-title">Counting Down to Forever</div>
-        <div class="countdown-grid">
-          <div class="countdown-card">
-            <span class="countdown-num" id="cd-days">00</span>
-            <span class="countdown-label">Days</span>
-          </div>
-          <div class="countdown-card">
-            <span class="countdown-num" id="cd-hours">00</span>
-            <span class="countdown-label">Hours</span>
-          </div>
-          <div class="countdown-card">
-            <span class="countdown-num" id="cd-mins">00</span>
-            <span class="countdown-label">Minutes</span>
-          </div>
-          <div class="countdown-card">
-            <span class="countdown-num" id="cd-secs">00</span>
-            <span class="countdown-label">Seconds</span>
-          </div>
-        </div>
-
-        <div style="margin-top: 16px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
-          <button class="btn btn-secondary" id="btn-add-google-cal" style="padding: 8px 16px; font-size: 0.78rem; min-height: 40px;">
-            📅 Google Calendar
-          </button>
-          <button class="btn btn-secondary" id="btn-download-ical" style="padding: 8px 16px; font-size: 0.78rem; min-height: 40px;">
-            🍏 Apple iCal (.ics)
-          </button>
-        </div>
-      </div>
-    </header>
-
-    <!-- SECTION: POPPING PHOTO MEMORIES / OUR STORY -->
-    <section class="photos-section" id="photos-section">
-      <div class="container">
-        <div class="section-subtitle">Moments Captured</div>
-        <h2 class="section-title">Our Story in Pictures</h2>
-        <div class="section-divider">❦</div>
-        <p style="text-align: center; max-width: 500px; margin: 0 auto; color: var(--text-muted); font-size: 0.92rem;">
-          From the first hello to the proposal under the starry skies. Tap any photo to see the full memory.
-        </p>
-
-        <!-- Polaroid Gallery Cards (Popping in with tilt & physics) -->
-        <div class="polaroid-gallery" id="polaroid-gallery">
-          <!-- Populated dynamically by app.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION: EVENT ITINERARY & TIMELINE -->
-    <section class="itinerary-section" id="itinerary-section">
-      <div class="container">
-        <div class="section-subtitle">The Order of Events</div>
-        <h2 class="section-title">Wedding Day Timeline</h2>
-        <div class="section-divider">❦</div>
-
-        <div class="timeline" id="itinerary-timeline">
-          <!-- Populated dynamically by app.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION: LOCATION & GOOGLE MAPS -->
-    <section class="location-section" id="location-section">
-      <div class="container">
-        <div class="section-subtitle">Venue & Directions</div>
-        <h2 class="section-title">Getting There</h2>
-        <div class="section-divider">❦</div>
-
-        <div class="location-card">
-          <div class="location-grid">
-            
-            <!-- Venue Details -->
-            <div class="location-info">
-              <span class="venue-badge">The Celebration Grounds</span>
-              <h3 class="venue-title venue-name">The Rosewood Manor & Gardens</h3>
-
-              <div class="venue-address-box">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                  <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-                <div>
-                  <div class="venue-address-1">742 Evergreen Botanical Gardens, High Street</div>
-                  <div class="venue-address-2">Beverly Hills, CA 90210</div>
-                </div>
-              </div>
-
-              <ul class="venue-details-list">
-                <li>
-                  <strong>Pavilion:</strong> <span class="venue-landmark">Grand Hall & Waterfront Lawn Pavilion</span>
-                </li>
-                <li>
-                  <strong>Parking:</strong> <span class="venue-parking">Complimentary Valet Parking available at main gates.</span>
-                </li>
-                <li>
-                  <strong>Airport:</strong> <span>LAX Airport (~35 minutes drive via I-405)</span>
-                </li>
-              </ul>
-
-              <div class="location-buttons">
-                <a href="#" id="btn-open-maps" class="btn btn-primary">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
-                  </svg>
-                  Open in Google Maps
-                </a>
-                <button class="btn btn-secondary" id="btn-copy-address">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                  </svg>
-                  Copy Address
-                </button>
-              </div>
+      <div class="envelope-box" id="envelope-box">
+        <div class="env-body">
+          <div class="env-letter-card">
+            <div class="card-ganesh">
+              <svg viewBox="0 0 100 100" width="32" height="32" fill="#d4af37">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#d4af37" stroke-width="2" stroke-dasharray="3,3"/>
+                <text x="50" y="62" font-size="34" font-family="'Rozha One', serif" text-anchor="middle" fill="#78121f">ॐ</text>
+              </svg>
             </div>
+            <div class="card-couple" id="card-couple-names">Aarav & Diya</div>
+            <div class="card-date" id="card-wedding-date">November 28, 2026</div>
+          </div>
 
-            <!-- Embedded Google Map -->
-            <div class="map-frame-wrapper">
-              <iframe
-                id="google-maps-iframe"
-                src=""
-                title="Wedding Venue Location Map"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                allowfullscreen>
-              </iframe>
-            </div>
+          <div class="env-flap-left"></div>
+          <div class="env-flap-right"></div>
+          <div class="env-flap-bottom"></div>
+          <div class="env-flap-top"></div>
 
+          <!-- Wax Seal -->
+          <div class="env-wax-seal" id="env-wax-seal" title="Tap to Open">
+            <span class="env-wax-seal-inner">ॐ</span>
+            <span class="env-wax-seal-label">OPEN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tap-to-open-prompt" id="tap-prompt">
+        <span>✉️</span>
+        <span>Tap Envelope to Open</span>
+      </div>
+    </div>
+
+
+    <!-- =========================================================================
+         2. FLOATING BAR (MUSIC CONTROLLER & EDIT BUTTON)
+         ========================================================================= -->
+    <div class="top-floating-bar">
+      <div class="audio-pill">
+        <button class="audio-btn" id="audio-toggle-btn" aria-label="Toggle Wedding Music">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+        </button>
+        <span id="audio-label-text">Our Song</span>
+      </div>
+
+      <button class="btn-edit-details" id="btn-open-edit-modal">
+        <span>✏️</span> Edit Details
+      </button>
+    </div>
+
+
+    <!-- =========================================================================
+         3. HERO ARCH: THIN GOLD MUGHAL ARCH WITH SLOW-ZOOMING PHOTO BACKGROUND
+         ========================================================================= -->
+    <section class="hero-arch-section">
+      <div class="arch-frame-container">
+        
+        <!-- Blurred Slowly Zooming Background Image -->
+        <div class="arch-background-zoom" id="arch-bg-img" style="background-image: url('assets/images/couple-1.jpg');"></div>
+
+        <!-- Arch Header -->
+        <div class="arch-content">
+          <div class="ganesh-symbol">ॐ</div>
+          <div class="invitation-shloka">|| श्री गणेशाय नमः ||</div>
+          <div class="family-invitation-lead">Together With Their Families</div>
+        </div>
+
+        <!-- Arch Center: Couple Names & Parentage -->
+        <div class="arch-content" style="margin: 10px 0;">
+          <div class="couple-title-groom" id="disp-groom-name">Aarav</div>
+          <div class="parentage-box">
+            Son of <strong id="disp-groom-parents">Mr. Rajesh & Mrs. Sunita Sharma</strong>
+          </div>
+
+          <div class="couple-ampersand-sign">&</div>
+
+          <div class="couple-title-bride" id="disp-bride-name">Diya</div>
+          <div class="parentage-box">
+            Daughter of <strong id="disp-bride-parents">Mr. Vikram & Mrs. Meera Patel</strong>
           </div>
         </div>
 
-        <!-- Dress Code Box -->
-        <div class="dresscode-box">
-          <div class="section-subtitle">Attire Guidance</div>
-          <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin: 8px 0;">Black Tie Optional / Elegant Pastel</h3>
-          <p style="font-size: 0.88rem; color: var(--text-muted); max-width: 520px; margin: 0 auto;">
-            We invite you to celebrate in graceful evening wear. We kindly recommend harmonious tones from our celebration color palette:
+        <!-- Arch Footer: Closing Line -->
+        <div class="arch-content">
+          <p style="font-size: 0.72rem; color: #fce8cc; text-transform: uppercase; letter-spacing: 0.15em;">
+            Cordially Invite You to Celebrate Their Wedding
           </p>
-          <div class="palette-swatches" id="palette-swatches">
-            <!-- Populated dynamically -->
+          <div class="family-closing-line" id="disp-closing-line">
+            With love, the Sharma & Patel families
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- SECTION: RSVP & BLESSINGS WALL -->
-    <section class="rsvp-section" id="rsvp-section">
-      <div class="container">
-        <div class="section-subtitle">Will You Celebrate With Us?</div>
-        <h2 class="section-title">RSVP & Well Wishes</h2>
-        <div class="section-divider">❦</div>
-        <p style="text-align: center; color: var(--text-muted); font-size: 0.92rem; max-width: 480px; margin: 0 auto;">
-          Kindly respond by September 30, 2026. We look forward to celebrating this special day with you!
-        </p>
 
-        <!-- RSVP Form Card -->
-        <div class="rsvp-card">
-          <form id="wedding-rsvp-form">
-            
-            <div class="form-group">
-              <label class="form-label" for="guest-name">Your Full Name(s)</label>
-              <input type="text" id="guest-name" class="form-control" placeholder="e.g., Emily & Robert Davis" required />
-            </div>
+    <!-- =========================================================================
+         4. WEDDING & PHERAS AUSPICIOUS MUHURAT
+         ========================================================================= -->
+    <section class="section-card">
+      <div class="section-header-tag">Auspicious Union</div>
+      <h2 class="section-main-title">The Wedding Day</h2>
+      <div class="golden-divider-ornament">✦ ॐ ✦</div>
 
-            <div class="form-group">
-              <label class="form-label">Will You Attend?</label>
-              <div class="radio-group">
-                <label class="radio-card active">
-                  <input type="radio" name="attendance" value="attending" checked />
-                  <span>Joyfully Accepts 🥂</span>
-                </label>
-                <label class="radio-card">
-                  <input type="radio" name="attendance" value="declining" />
-                  <span>Regretfully Declines 💌</span>
-                </label>
-              </div>
-            </div>
+      <div class="wedding-highlight-banner">
+        <span class="pheras-muhurat-badge" id="disp-pheras-badge">Pheras at 4:30 PM</span>
+        <div class="wedding-big-date" id="disp-wedding-date">Saturday, 28 November 2026</div>
+        <div class="wedding-pheras-time">Shubh Vivah & Vedic Rituals</div>
 
-            <div class="form-group" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px;">
-              <div>
-                <label class="form-label" for="guest-count">Number of Guests</label>
-                <select id="guest-count" class="form-control">
-                  <option value="1">1 Person</option>
-                  <option value="2" selected>2 Persons</option>
-                  <option value="3">3 Persons</option>
-                  <option value="4">4 Persons</option>
-                </select>
-              </div>
-              <div>
-                <label class="form-label" for="diet-pref">Dietary Preference</label>
-                <select id="diet-pref" class="form-control">
-                  <option value="standard">Standard Menu</option>
-                  <option value="vegetarian">Vegetarian</option>
-                  <option value="vegan">Vegan</option>
-                  <option value="halal">Halal</option>
-                  <option value="gluten-free">Gluten-Free</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="guest-message">Warm Wishes & Blessings</label>
-              <textarea id="guest-message" class="form-control" rows="3" placeholder="Leave a sweet note for Sophia & Alexander..."></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; font-size: 0.95rem;">
-              Send RSVP & Blessings 🎉
-            </button>
-          </form>
-        </div>
-
-        <!-- Wishes Wall -->
-        <div class="wishes-container">
-          <h3 style="font-family: var(--font-serif); font-size: 1.25rem; text-align: center; margin-bottom: 14px;">
-            Well Wishes From Friends & Family 💖
-          </h3>
-          <div class="wishes-list" id="wishes-list">
-            <!-- Populated dynamically -->
+        <!-- Live Countdown -->
+        <div class="countdown-grid-wrap">
+          <div class="countdown-box-mini">
+            <div class="countdown-val" id="cd-d">00</div>
+            <div class="countdown-txt">Days</div>
+          </div>
+          <div class="countdown-box-mini">
+            <div class="countdown-val" id="cd-h">00</div>
+            <div class="countdown-txt">Hours</div>
+          </div>
+          <div class="countdown-box-mini">
+            <div class="countdown-val" id="cd-m">00</div>
+            <div class="countdown-txt">Mins</div>
+          </div>
+          <div class="countdown-box-mini">
+            <div class="countdown-val" id="cd-s">00</div>
+            <div class="countdown-txt">Secs</div>
           </div>
         </div>
+      </div>
 
+      <!-- Venue & Google Map -->
+      <div class="venue-info-box">
+        <div class="venue-name-lead" id="disp-venue-name">The Grand Royal Palace & Heritage Gardens</div>
+        <div class="venue-address-lead" id="disp-venue-address">
+          Main Palace Road, Near City Lake, Udaipur, Rajasthan 313001
+        </div>
+
+        <div class="map-action-btns">
+          <a href="https://maps.google.com" target="_blank" class="btn-gold-action" id="btn-maps-nav">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+            </svg>
+            Open in Google Maps
+          </a>
+
+          <button class="btn-secondary-action" id="btn-add-cal">
+            📅 Add to Calendar (.ics / Google)
+          </button>
+        </div>
+
+        <div class="venue-map-embed">
+          <iframe 
+            id="venue-map-iframe"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116086.29953934785!2d73.6521997972656!3d24.585445000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e56550a14411%3A0xdbd8c28455b868b0!2sCity%20Palace%2C%20Udaipur!5e0!3m2!1sen!2sin!4v1716500000000!5m2!1sen!2sin"
+            loading="lazy">
+          </iframe>
+        </div>
       </div>
     </section>
 
-  </main>
+
+    <!-- =========================================================================
+         5. INDIAN WEDDING FUNCTIONS & CEREMONIES
+         ========================================================================= -->
+    <section class="section-card">
+      <div class="section-header-tag">Celebrations & Rituals</div>
+      <h2 class="section-main-title">Wedding Functions</h2>
+      <div class="golden-divider-ornament">✦ ॐ ✦</div>
+
+      <div class="ceremonies-container" id="ceremonies-list">
+        <!-- Rendered dynamically by script -->
+      </div>
+    </section>
+
+
+    <!-- =========================================================================
+         6. "OUR STORY" PHOTO CAROUSEL
+         ========================================================================= -->
+    <section class="section-card">
+      <div class="section-header-tag">Memories & Journey</div>
+      <h2 class="section-main-title">Our Story</h2>
+      <div class="golden-divider-ornament">✦ ॐ ✦</div>
+
+      <div class="carousel-section-wrap">
+        <div class="carousel-track-container">
+          <div class="carousel-track" id="carousel-track">
+            <!-- Carousel slides populated dynamically -->
+          </div>
+
+          <button class="carousel-btn carousel-btn-prev" id="car-prev" aria-label="Previous Photo">&#10094;</button>
+          <button class="carousel-btn carousel-btn-next" id="car-next" aria-label="Next Photo">&#10095;</button>
+        </div>
+
+        <div class="carousel-dots" id="carousel-dots">
+          <!-- Dots rendered dynamically -->
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================================================================
+         7. RSVP & BLESSINGS FORM
+         ========================================================================= -->
+    <section class="section-card">
+      <div class="section-header-tag">We Look Forward to Seeing You</div>
+      <h2 class="section-main-title">RSVP & Blessings</h2>
+      <div class="golden-divider-ornament">✦ ॐ ✦</div>
+
+      <form class="rsvp-form-container" id="invite-rsvp-form">
+        <input type="text" id="rsvp-guest-name" placeholder="Your Name(s)" required />
+        <select id="rsvp-attending">
+          <option value="yes">Joyfully Attending with Family 🥂</option>
+          <option value="no">Wishing You Joy from Afar 💌</option>
+        </select>
+        <textarea id="rsvp-message" rows="3" placeholder="Send your warm blessings to the bride & groom..."></textarea>
+        
+        <button type="submit" class="btn-gold-action" style="width: 100%;">
+          Send Blessings 🎉
+        </button>
+      </form>
+    </section>
+
+
+    <!-- =========================================================================
+         8. FOOTER
+         ========================================================================= -->
+    <footer class="royal-invite-footer">
+      <div class="footer-blessing-ganesh">ॐ</div>
+      <div class="footer-couple-monogram" id="disp-footer-monogram">A & D</div>
+      <p style="color: var(--text-muted); font-size: 0.85rem; max-width: 320px; margin: 0 auto 16px auto;">
+        Your presence and blessings will make our special day truly unforgettable.
+      </p>
+      <button class="btn-secondary-action" id="btn-replay-envelope" style="margin: 0 auto;">
+        ✉️ Replay Envelope
+      </button>
+    </footer>
+
+  </div>
+
 
   <!-- =========================================================================
-       4. FOOTER & REPLAY ENVELOPE BUTTON
+       9. LIGHTBOX MODAL
        ========================================================================= -->
-  <footer class="invite-footer">
-    <div class="footer-monogram">S & A</div>
-    <div class="footer-hashtag">#SophiaAndAlexForever</div>
-    <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 18px;">
-      With love and gratitude, we can't wait to see you on our wedding day!
-    </p>
-    <button class="btn btn-secondary" id="btn-replay-envelope" style="font-size: 0.78rem; padding: 8px 18px; min-height: 40px;">
-      ✉️ Replay Envelope Opening
-    </button>
-  </footer>
-
-  <!-- =========================================================================
-       5. PHOTO LIGHTBOX MODAL
-       ========================================================================= -->
-  <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true">
-    <div class="lightbox-content">
-      <button class="lightbox-close" id="lightbox-close" aria-label="Close modal">&times;</button>
-      <img src="" alt="Enlarged wedding photo" class="lightbox-img" id="lightbox-img" />
-      <div class="lightbox-caption" id="lightbox-caption"></div>
+  <div class="modal-overlay" id="lightbox-modal">
+    <div style="position: relative; max-width: 90%; text-align: center;">
+      <button id="lightbox-close-btn" style="position: absolute; top: -40px; right: 0; background: none; border: none; color: #fff; font-size: 2rem; cursor: pointer;">&times;</button>
+      <img src="" alt="Enlarged wedding moment" id="lightbox-img" class="lightbox-img-view" />
+      <div id="lightbox-caption" style="color: #fff; font-family: var(--font-script); font-size: 1.6rem; margin-top: 10px;"></div>
     </div>
   </div>
 
+
   <!-- =========================================================================
-       6. TOAST NOTIFICATION
+       10. IN-PLACE EDIT DETAILS DRAWER (LIVE CUSTOMIZER)
        ========================================================================= -->
-  <div class="toast-notice" id="toast-notice"></div>
+  <div class="modal-overlay" id="edit-modal">
+    <div class="edit-modal-card">
+      <div class="edit-modal-title">
+        <span>✏️ Edit Wedding Details</span>
+        <button id="btn-close-edit-modal" style="background:none; border:none; font-size:1.6rem; cursor:pointer;">&times;</button>
+      </div>
 
-  <!-- Scripts -->
-  <script src="config.js"></script>
-  <script src="js/audio.js"></script>
-  <script src="js/petals.js"></script>
-  <script src="js/countdown.js"></script>
-  <script src="js/app.js"></script>
+      <div class="edit-field-group">
+        <label class="edit-field-label">Groom's Name</label>
+        <input type="text" id="input-groom-name" class="edit-field-input" value="Aarav" />
+      </div>
 
+      <div class="edit-field-group">
+        <label class="edit-field-label">Groom's Parents</label>
+        <input type="text" id="input-groom-parents" class="edit-field-input" value="Mr. Rajesh & Mrs. Sunita Sharma" />
+      </div>
+
+      <div class="edit-field-group">
+        <label class="edit-field-label">Bride's Name</label>
+        <input type="text" id="input-bride-name" class="edit-field-input" value="Diya" />
+      </div>
+
+      <div class="edit-field-group">
+        <label class="edit-field-label">Bride's Parents</label>
+        <input type="text" id="input-bride-parents" class="edit-field-input" value="Mr. Vikram & Mrs. Meera Patel" />
+      </div>
+
+      <div class="edit-field-group">
+        <label class="edit-field-label">Closing Line</label>
+        <input type="text" id="input-closing-line" class="edit-field-input" value="With love, the Sharma & Patel families" />
+      </div>
+
+      <div class="edit-field-group">
+        <label class="edit-field-label">Wedding Date</label>
+        <input type="text" id="input-wedding-date" class="edit-field-input" value="Saturday, 28 November 2026" />
+      </div>
+
+      <div class="edit-field-group">
+        <label class="edit-field-label">Pheras Time</label>
+        <input type="text" id="input-pheras-time" class="edit-field-input" value="Pheras at 4:30 PM" />
+      </div>
+
+      <div class="edit-field-group">
+        <label class="edit-field-label">Venue Name</label>
+        <input type="text" id="input-venue-name" class="edit-field-input" value="The Grand Royal Palace & Heritage Gardens" />
+      </div>
+
+      <div class="edit-field-group">
+        <label class="edit-field-label">Venue Full Address</label>
+        <input type="text" id="input-venue-address" class="edit-field-input" value="Main Palace Road, Near City Lake, Udaipur, Rajasthan 313001" />
+      </div>
+
+      <div class="edit-field-group">
+        <label class="edit-field-label">Google Maps Link</label>
+        <input type="text" id="input-maps-link" class="edit-field-input" value="https://maps.google.com/?q=City+Palace+Udaipur" />
+      </div>
+
+      <button class="btn-gold-action" id="btn-save-custom-details" style="width: 100%; margin-top: 8px;">
+        Save & Update Invite ✨
+      </button>
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       11. JAVASCRIPT LOGIC
+       ========================================================================= -->
+  <script>
+    // -------------------------------------------------------------------------
+    // Indian Wedding Functions Data
+    // -------------------------------------------------------------------------
+    const DEFAULT_FUNCTIONS = [
+      {
+        name: "Mata Pujan",
+        date: "Thursday, 26 Nov 2026",
+        time: "9:00 AM",
+        place: "Family Residence / Temple Hall",
+        dress: "Traditional",
+        colorName: "Beige / Sandalwood",
+        colorHex: "#d7c4a3"
+      },
+      {
+        name: "Haldi Ceremony",
+        date: "Friday, 27 Nov 2026",
+        time: "10:30 AM",
+        place: "Sunken Lawn Pavilion",
+        dress: "Wear Yellow",
+        colorName: "Turmeric Yellow",
+        colorHex: "#fbc02d"
+      },
+      {
+        name: "Mehendi & Kiwano",
+        date: "Friday, 27 Nov 2026",
+        time: "3:30 PM",
+        place: "Courtyard of Flowers",
+        dress: "Wear Green",
+        colorName: "Emerald Green",
+        colorHex: "#2e7d32"
+      },
+      {
+        name: "Sangeet & Cocktail Night",
+        date: "Friday, 27 Nov 2026",
+        time: "7:30 PM onwards",
+        place: "Grand Ballroom & Terrace",
+        dress: "Indo-Western Glamour",
+        colorName: "Purple & Pink",
+        colorHex: "#8e24aa"
+      },
+      {
+        name: "Baraat & Shubh Pheras",
+        date: "Saturday, 28 Nov 2026",
+        time: "3:30 PM Baraat | 4:30 PM Pheras",
+        place: "The Royal Lake Mandap",
+        dress: "Festive Royal",
+        colorName: "Red & Gold",
+        colorHex: "#b71c1c"
+      },
+      {
+        name: "Grand Reception",
+        date: "Sunday, 29 Nov 2026",
+        time: "7:00 PM onwards",
+        place: "The Palace Grand Lawns",
+        dress: "Formal / Black Tie Optional",
+        colorName: "Royal Navy & Gold",
+        colorHex: "#1a237e"
+      }
+    ];
+
+    // Story Photos
+    const DEFAULT_PHOTOS = [
+      {
+        src: "assets/images/couple-1.jpg",
+        title: "Where Our Story Began ✨",
+        sub: "The moment our paths crossed"
+      },
+      {
+        src: "assets/images/couple-2.jpg",
+        title: "She Said YES! 💍",
+        sub: "A promise under starry skies"
+      },
+      {
+        src: "assets/images/couple-3.jpg",
+        title: "Endless Laughter & Chai ☕",
+        sub: "Growing together every day"
+      },
+      {
+        src: "assets/images/couple-4.jpg",
+        title: "Forever Starts Today 🥂",
+        sub: "Step into our new chapter"
+      }
+    ];
+
+    // -------------------------------------------------------------------------
+    // Audio Player & Web Audio Sitar / Harp Synthesizer Fallback
+    // -------------------------------------------------------------------------
+    class RoyalAudioPlayer {
+      constructor() {
+        this.audio = new Audio("assets/audio/music.mp3");
+        this.audio.loop = true;
+        this.audio.preload = "auto";
+        this.isPlaying = false;
+        this.audioCtx = null;
+        this.btn = document.getElementById("audio-toggle-btn");
+        this.label = document.getElementById("audio-label-text");
+
+        this.btn?.addEventListener("click", () => this.toggle());
+      }
+
+      playSitarChime() {
+        try {
+          const AudioContext = window.AudioContext || window.webkitAudioContext;
+          if (!AudioContext) return;
+          if (!this.audioCtx) this.audioCtx = new AudioContext();
+          if (this.audioCtx.state === "suspended") this.audioCtx.resume();
+
+          const now = this.audioCtx.currentTime;
+          // Indian Raga Yaman harmonic scale frequencies: D, F#, A, B, C#
+          const freqs = [293.66, 369.99, 440.00, 493.88, 554.37, 587.33];
+
+          freqs.forEach((freq, idx) => {
+            const osc = this.audioCtx.createOscillator();
+            const gain = this.audioCtx.createGain();
+
+            osc.type = "sine";
+            osc.frequency.setValueAtTime(freq, now + idx * 0.08);
+
+            gain.gain.setValueAtTime(0, now + idx * 0.08);
+            gain.gain.linearRampToValueAtTime(0.2, now + idx * 0.08 + 0.03);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.08 + 1.2);
+
+            osc.connect(gain);
+            gain.connect(this.audioCtx.destination);
+
+            osc.start(now + idx * 0.08);
+            osc.stop(now + idx * 0.08 + 1.3);
+          });
+        } catch (e) {
+          console.warn(e);
+        }
+      }
+
+      start() {
+        this.playSitarChime();
+        this.audio.volume = 0.05;
+        this.audio.play().then(() => {
+          this.isPlaying = true;
+          this.updateUI(true);
+          // Fade in
+          let v = 0.05;
+          const fader = setInterval(() => {
+            if (v < 0.65) {
+              v += 0.05;
+              this.audio.volume = v;
+            } else {
+              clearInterval(fader);
+            }
+          }, 150);
+        }).catch((err) => {
+          console.log("Audio autoplay prevented", err);
+          this.updateUI(false);
+        });
+      }
+
+      toggle() {
+        if (this.isPlaying) {
+          this.audio.pause();
+          this.isPlaying = false;
+          this.updateUI(false);
+        } else {
+          this.audio.play().then(() => {
+            this.isPlaying = true;
+            this.updateUI(true);
+          });
+        }
+      }
+
+      updateUI(playing) {
+        if (!this.btn) return;
+        if (playing) {
+          this.btn.classList.add("playing");
+          this.btn.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>`;
+          if (this.label) this.label.textContent = "Playing 🎵";
+        } else {
+          this.btn.classList.remove("playing");
+          this.btn.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>`;
+          if (this.label) this.label.textContent = "Our Song";
+        }
+      }
+    }
+
+    const royalAudio = new RoyalAudioPlayer();
+
+    // -------------------------------------------------------------------------
+    // Floating Rose Petals & Golden Confetti Engine
+    // -------------------------------------------------------------------------
+    class PetalEngine {
+      constructor() {
+        this.canvas = document.getElementById("petals-canvas");
+        if (!this.canvas) return;
+        this.ctx = this.canvas.getContext("2d");
+        this.petals = [];
+        this.sparkles = [];
+        this.resize();
+        window.addEventListener("resize", () => this.resize());
+        this.initPetals();
+        this.loop();
+      }
+
+      resize() {
+        this.width = this.canvas.width = Math.min(window.innerWidth, 440);
+        this.height = this.canvas.height = window.innerHeight;
+      }
+
+      initPetals() {
+        for (let i = 0; i < 28; i++) {
+          this.petals.push(this.newPetal(true));
+        }
+      }
+
+      newPetal(randomY = false) {
+        const isGold = Math.random() < 0.35;
+        return {
+          x: Math.random() * this.width,
+          y: randomY ? Math.random() * this.height : -20,
+          size: isGold ? Math.random() * 4 + 3 : Math.random() * 10 + 8,
+          speedX: Math.random() * 1.2 - 0.6,
+          speedY: Math.random() * 1.1 + 0.7,
+          rotation: Math.random() * 360,
+          rotSpeed: Math.random() * 2 - 1,
+          sway: Math.random() * 3,
+          swaySpeed: 0.02,
+          isGold: isGold,
+          color: isGold ? "rgba(212, 175, 55," : "rgba(200, 40, 60,"
+        };
+      }
+
+      burst(x = this.width / 2, y = this.height / 2, count = 40) {
+        for (let i = 0; i < count; i++) {
+          const angle = Math.random() * Math.PI * 2;
+          const spd = Math.random() * 6 + 2;
+          this.sparkles.push({
+            x: x, y: y,
+            vx: Math.cos(angle) * spd,
+            vy: Math.sin(angle) * spd - 2,
+            gravity: 0.14,
+            drag: 0.96,
+            size: Math.random() * 5 + 3,
+            color: Math.random() < 0.6 ? "#ffd700" : "#d32f2f",
+            alpha: 1,
+            decay: 0.02
+          });
+        }
+      }
+
+      loop() {
+        this.ctx.clearRect(0, 0, this.width, this.height);
+
+        // Petals
+        for (let i = 0; i < this.petals.length; i++) {
+          const p = this.petals[i];
+          p.sway += p.swaySpeed;
+          p.x += p.speedX + Math.sin(p.sway) * 0.7;
+          p.y += p.speedY;
+          p.rotation += p.rotSpeed;
+
+          if (p.y > this.height + 20) this.petals[i] = this.newPetal(false);
+
+          this.ctx.save();
+          this.ctx.translate(p.x, p.y);
+          this.ctx.rotate((p.rotation * Math.PI) / 180);
+          this.ctx.fillStyle = `${p.color} 0.65)`;
+          this.ctx.beginPath();
+          if (p.isGold) {
+            this.ctx.arc(0, 0, p.size / 2, 0, Math.PI * 2);
+          } else {
+            this.ctx.ellipse(0, 0, p.size / 2, p.size, 0, 0, Math.PI * 2);
+          }
+          this.ctx.fill();
+          this.ctx.restore();
+        }
+
+        // Burst sparkles
+        for (let i = this.sparkles.length - 1; i >= 0; i--) {
+          const s = this.sparkles[i];
+          s.vx *= s.drag;
+          s.vy = s.vy * s.drag + s.gravity;
+          s.x += s.vx;
+          s.y += s.vy;
+          s.alpha -= s.decay;
+
+          if (s.alpha <= 0) {
+            this.sparkles.splice(i, 1);
+            continue;
+          }
+
+          this.ctx.save();
+          this.ctx.globalAlpha = s.alpha;
+          this.ctx.fillStyle = s.color;
+          this.ctx.fillRect(s.x, s.y, s.size, s.size);
+          this.ctx.restore();
+        }
+
+        requestAnimationFrame(() => this.loop());
+      }
+    }
+
+    const petalEngine = new PetalEngine();
+
+    // -------------------------------------------------------------------------
+    // Envelope Interaction
+    // -------------------------------------------------------------------------
+    const envelopeScreen = document.getElementById("envelope-screen");
+    const envelopeBox = document.getElementById("envelope-box");
+    const waxSeal = document.getElementById("env-wax-seal");
+    const tapPrompt = document.getElementById("tap-prompt");
+
+    function openEnvelope() {
+      if (envelopeBox.classList.contains("opening")) return;
+      envelopeBox.classList.add("opening");
+      petalEngine.burst();
+      royalAudio.start();
+
+      setTimeout(() => {
+        envelopeScreen.classList.add("opened");
+      }, 1400);
+    }
+
+    waxSeal?.addEventListener("click", openEnvelope);
+    envelopeBox?.addEventListener("click", openEnvelope);
+    tapPrompt?.addEventListener("click", openEnvelope);
+
+    document.getElementById("btn-replay-envelope")?.addEventListener("click", () => {
+      envelopeBox.classList.remove("opening");
+      envelopeScreen.classList.remove("opened");
+      window.scrollTo({ top: 0, behavior: "instant" });
+    });
+
+    // -------------------------------------------------------------------------
+    // Render Functions Timeline
+    // -------------------------------------------------------------------------
+    function renderCeremonies(list) {
+      const container = document.getElementById("ceremonies-list");
+      if (!container) return;
+      container.innerHTML = "";
+
+      list.forEach((c) => {
+        const card = document.createElement("div");
+        card.className = "ceremony-card";
+        card.style.setProperty("--theme-color", c.colorHex);
+        card.innerHTML = `
+          <div class="ceremony-header-row">
+            <h3 class="ceremony-name">${c.name}</h3>
+            <span class="ceremony-swatch-badge">
+              <span class="ceremony-swatch-circle"></span>
+              ${c.colorName}
+            </span>
+          </div>
+          <div class="ceremony-meta-row">
+            <span>📅 ${c.date}</span>
+            <span>⏰ ${c.time}</span>
+          </div>
+          <div class="ceremony-venue-text">📍 ${c.place}</div>
+          <div>
+            <span class="ceremony-dress-tag">Dress Code: ${c.dress}</span>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    renderCeremonies(DEFAULT_FUNCTIONS);
+
+    // -------------------------------------------------------------------------
+    // Photo Carousel & Lightbox
+    // -------------------------------------------------------------------------
+    let currentSlide = 0;
+    const track = document.getElementById("carousel-track");
+    const dotsContainer = document.getElementById("carousel-dots");
+    const lightboxModal = document.getElementById("lightbox-modal");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const lightboxCaption = document.getElementById("lightbox-caption");
+
+    function renderCarousel(photos) {
+      track.innerHTML = "";
+      dotsContainer.innerHTML = "";
+
+      photos.forEach((p, idx) => {
+        // Slide
+        const slide = document.createElement("div");
+        slide.className = "carousel-slide";
+        slide.innerHTML = `
+          <img src="${p.src}" alt="${p.title}" loading="lazy" />
+          <div class="carousel-caption-overlay">
+            <div class="carousel-caption-title">${p.title}</div>
+            <div class="carousel-caption-sub">${p.sub}</div>
+          </div>
+        `;
+        slide.addEventListener("click", () => {
+          lightboxImg.src = p.src;
+          lightboxCaption.textContent = p.title;
+          lightboxModal.classList.add("active");
+        });
+        track.appendChild(slide);
+
+        // Dot
+        const dot = document.createElement("div");
+        dot.className = `carousel-dot ${idx === 0 ? 'active' : ''}`;
+        dot.addEventListener("click", () => goToSlide(idx));
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    function goToSlide(idx) {
+      currentSlide = idx;
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+      document.querySelectorAll(".carousel-dot").forEach((d, i) => {
+        d.classList.toggle("active", i === currentSlide);
+      });
+    }
+
+    document.getElementById("car-prev")?.addEventListener("click", () => {
+      currentSlide = (currentSlide - 1 + DEFAULT_PHOTOS.length) % DEFAULT_PHOTOS.length;
+      goToSlide(currentSlide);
+    });
+
+    document.getElementById("car-next")?.addEventListener("click", () => {
+      currentSlide = (currentSlide + 1) % DEFAULT_PHOTOS.length;
+      goToSlide(currentSlide);
+    });
+
+    document.getElementById("lightbox-close-btn")?.addEventListener("click", () => {
+      lightboxModal.classList.remove("active");
+    });
+    lightboxModal?.addEventListener("click", (e) => {
+      if (e.target === lightboxModal) lightboxModal.classList.remove("active");
+    });
+
+    renderCarousel(DEFAULT_PHOTOS);
+
+    // -------------------------------------------------------------------------
+    // Live Countdown
+    // -------------------------------------------------------------------------
+    const targetWedding = new Date("2026-11-28T16:30:00").getTime();
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = targetWedding - now;
+      if (diff > 0) {
+        document.getElementById("cd-d").textContent = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, "0");
+        document.getElementById("cd-h").textContent = String(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, "0");
+        document.getElementById("cd-m").textContent = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, "0");
+        document.getElementById("cd-s").textContent = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, "0");
+      }
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Calendar sync
+    document.getElementById("btn-add-cal")?.addEventListener("click", () => {
+      const title = "Aarav & Diya's Wedding Celebration";
+      const desc = "Shubh Vivah & Pheras at The Grand Royal Palace, Udaipur";
+      const loc = "The Grand Royal Palace & Heritage Gardens, Udaipur";
+      const start = "20261128T163000";
+      const end = "20261128T230000";
+      const gcalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${start}/${end}&details=${encodeURIComponent(desc)}&location=${encodeURIComponent(loc)}`;
+      window.open(gcalUrl, "_blank");
+    });
+
+    // -------------------------------------------------------------------------
+    // RSVP Form
+    // -------------------------------------------------------------------------
+    document.getElementById("invite-rsvp-form")?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("rsvp-guest-name").value;
+      petalEngine.burst(window.innerWidth / 2, window.innerHeight / 2, 60);
+      alert(`Thank you, ${name}! Your blessings have been received with love. ❤️`);
+      e.target.reset();
+    });
+
+    // -------------------------------------------------------------------------
+    // In-Place Details Customizer Drawer
+    // -------------------------------------------------------------------------
+    const editModal = document.getElementById("edit-modal");
+    document.getElementById("btn-open-edit-modal")?.addEventListener("click", () => {
+      editModal.classList.add("active");
+    });
+    document.getElementById("btn-close-edit-modal")?.addEventListener("click", () => {
+      editModal.classList.remove("active");
+    });
+
+    document.getElementById("btn-save-custom-details")?.addEventListener("click", () => {
+      const groom = document.getElementById("input-groom-name").value;
+      const groomP = document.getElementById("input-groom-parents").value;
+      const bride = document.getElementById("input-bride-name").value;
+      const brideP = document.getElementById("input-bride-parents").value;
+      const closing = document.getElementById("input-closing-line").value;
+      const date = document.getElementById("input-wedding-date").value;
+      const pheras = document.getElementById("input-pheras-time").value;
+      const venue = document.getElementById("input-venue-name").value;
+      const address = document.getElementById("input-venue-address").value;
+      const mapLink = document.getElementById("input-maps-link").value;
+
+      // Update DOM
+      document.getElementById("disp-groom-name").textContent = groom;
+      document.getElementById("disp-groom-parents").textContent = groomP;
+      document.getElementById("disp-bride-name").textContent = bride;
+      document.getElementById("disp-bride-parents").textContent = brideP;
+      document.getElementById("disp-closing-line").textContent = closing;
+      document.getElementById("disp-wedding-date").textContent = date;
+      document.getElementById("card-wedding-date").textContent = date;
+      document.getElementById("disp-pheras-badge").textContent = pheras;
+      document.getElementById("disp-venue-name").textContent = venue;
+      document.getElementById("disp-venue-address").textContent = address;
+      document.getElementById("card-couple-names").textContent = `${groom} & ${bride}`;
+      document.getElementById("env-couple-preview").textContent = `${groom} & ${bride}`;
+      document.getElementById("disp-footer-monogram").textContent = `${groom[0]} & ${bride[0]}`;
+      document.getElementById("btn-maps-nav").href = mapLink;
+
+      editModal.classList.remove("active");
+      petalEngine.burst();
+    });
+  </script>
 </body>
 </html>
