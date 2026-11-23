@@ -1,132 +1,63 @@
-# 💍 Luxury Interactive Digital Wedding Invitation
+# 💍 Royal Interactive Mobile Wedding Invitation
 
-A digital wedding invitation web experience featuring an interactive 3D envelope with a wax seal, synchronized romantic music playback, photo cards popping into view, live countdown timer, and an embedded Google Map with direct turn-by-turn navigation for wedding guests.
+An interactive, mobile-first wedding invitation web experience designed with rich Indian royalty aesthetics: wine-velvet texture (`#6e1f2f`), champagne gold (`#d4af37`), ivory, and blush.
 
----
-
-## ✨ Features
-
-- 💌 **Interactive 3D Envelope & Wax Seal**:
-  - Realistic gold-embossed wax seal that cracks with sparkle particles upon tap.
-  - 3D envelope flap opening animation with letter slide-out.
-  - Satisfies modern mobile browser autoplay restrictions (audio starts smoothly on tap!).
-- 🎵 **Romantic Background Music & Audio Controller**:
-  - Automatically fades in romantic piano/acoustic track (`assets/audio/music.mp3`) when the envelope is tapped.
-  - Web Audio harmonic chime effect plays instantly upon seal breaking.
-  - Floating glassmorphic audio player bar with rotating vinyl disk, track title, animated soundwave equalizer, and play/pause controls.
-- 📸 **Popping Photo Memories ("Our Story")**:
-  - Polaroid memory cards pop outward around the envelope upon opening.
-  - Responsive Polaroid photo gallery with tilted tape aesthetics, romantic captions, and bouncy pop-in physics.
-  - Built-in photo lightbox modal to zoom and view memories full-screen.
-- 🗺️ **Location & Google Map Integration**:
-  - Interactive embedded Google Map iframe for the celebration venue.
-  - One-click **"Open in Google Maps"** button for GPS navigation on iPhone/Android.
-  - **"Copy Address"** button with toast notification.
-  - Detailed venue info: Pavilion, Valet Parking, airport transit details.
-- ⏳ **Live Countdown Timer & Calendar Sync**:
-  - Real-time Days : Hours : Minutes : Seconds countdown to the wedding ceremony.
-  - **"Add to Google Calendar"** one-click link.
-  - **"Download Apple iCal (.ics)"** export for iPhone/Mac/Outlook.
-- 🌸 **Falling Rose Petals & Golden Confetti Engine**:
-  - Pure HTML5 Canvas particle system with organic falling petals and golden shimmer.
-  - Dynamic confetti explosion on envelope opening and RSVP submission.
-- 💌 **RSVP Form & Live Blessings Wall**:
-  - Attendance toggle, party size, dietary preferences, and guestbook messages.
-  - Saves locally to `localStorage` and appends to the live wishes wall with confetti celebration.
-- 🎨 **Dress Code & Color Palette Guide**:
-  - Visual color swatches (Champagne Gold, Blush Rose, Sage Green, etc.).
-- 📱 **Mobile & Social-Share Ready**:
-  - 100% responsive across smartphones, tablets, and desktops.
-  - OpenGraph meta tags configured for WhatsApp, iMessage, and Instagram link previews.
+🌐 **Live Demo (GitHub Pages):** [https://gahlodshiva-ctrl.github.io/wedding-digital-invite/](https://gahlodshiva-ctrl.github.io/wedding-digital-invite/)
 
 ---
 
-## 🚀 Quick Start / How to Run Locally
+## ✨ Features & Design Flow
 
-You can run a simple local web server in the project directory:
+1. **📖 3D Wine-Velvet Book Opening**:
+   - Velvet-textured cover with a gold Ganesh ji medallion and corner filigree brackets.
+   - Parallax blurred 3D roses floating in the background.
+   - Preloader transitions to *"Tap the book to open"*; on tap, the cover swings open in 3D (`rotateY(-160deg)`), petals rain down, and music fades in.
 
-### Option 1: Python HTTP Server (Built into Mac)
+2. **👑 First Page (100dvh Phone Height)**:
+   - Centered and framed for mobile screens without awkward cutoffs.
+   - Gold Ganesh medallion (`|| श्री गणेशाय नमः ||`), family invitations, and groom & bride names animated letter-by-letter with a soft blur-in effect.
+   - Floating scroll-down cue.
+
+3. **📜 "Pull to Reveal" Save the Date**:
+   - Golden ceremonial rod with a hanging silk tassel and animated pull cue.
+   - Tapping or dragging the tassel unrolls the parchment scroll with a rose-and-gold border and triggers a burst of petals and confetti.
+   - Includes a **one-line live countdown** (`Days · Hrs · Min · Sec`) and an **Add to Calendar** button (Google Calendar + Apple .ics export).
+
+4. **🎪 3D Swipeable Wedding Festivities Carousel**:
+   - Custom 3D perspective slider where the center card is crisp and neighboring cards are blurred and angled.
+   - Touch swipe navigation (left/right) across **Mata Pujan**, **Haldi** *(Yellow)*, **Mehendi** *(Green)*, **Sangeet** *(Purple & Pink)*, and **Baraat & Pheras** *(Red & Gold)*, complete with dress code swatches.
+
+5. **📸 3D Our Story Carousel**:
+   - Swipeable photo memories with romantic captions and date tags.
+   - Tap any card to open in a full-screen Lightbox modal.
+
+6. **🥂 Grand Reception**:
+   - Deep wine velvet card with gold typography, star sparkles, and blooming roses in two corners.
+
+7. **🗺️ Location & Animated Route**:
+   - Illustrated map card with an animated dotted route line and bouncing location pin.
+   - One-click **"Get Directions"** button (opens Google Maps GPS).
+   - **"Copy Address"** button with live toast notification.
+   - Embedded Google Maps iframe.
+
+8. **🌸 Parallax Marigold Toran & 3D Corner Roses**:
+   - Hanging marigold strings pinned to the top that gently swing on scroll.
+   - Corner 3D roses that sway and respond to movement without blocking touch events.
+   - Hardware-accelerated 60fps performance on iPhone and Android.
+
+---
+
+## 🚀 How to Run Locally
+
 ```bash
-cd /Users/shivagahlold/.gemini/antigravity/scratch/wedding-digital-invite
-python3 -m http.server 8000
+cd wedding-digital-invite
+python3 -m http.server 8899
 ```
-Open your browser and visit: **`http://localhost:8000`**
-
-### Option 2: Node.js (npx serve)
-```bash
-npx serve /Users/shivagahlold/.gemini/antigravity/scratch/wedding-digital-invite
-```
+Open **[http://localhost:8899](http://localhost:8899)** in your mobile or desktop browser.
 
 ---
 
-## 🛠️ How to Customize
+## 🌐 Hosted on GitHub Pages
 
-All wedding details are centrally organized in **`config.js`**! You don't need to dig through HTML/CSS to change names or dates.
-
-Open `config.js` and customize:
-
-```javascript
-window.WEDDING_CONFIG = {
-  // 1. Couple Names & Monogram
-  couple: {
-    groom: "Alexander",
-    bride: "Sophia",
-    monogram: "S & A",
-    hashtag: "#SophiaAndAlexForever"
-  },
-
-  // 2. Wedding Date (Used for Countdown & Calendar sync)
-  date: {
-    displayDate: "Saturday, October 24, 2026",
-    isoDateTime: "2026-10-24T16:00:00"
-  },
-
-  // 3. Venue & Google Maps Link
-  location: {
-    venueName: "The Rosewood Manor & Gardens",
-    addressLine1: "742 Evergreen Botanical Gardens, High Street",
-    addressLine2: "Beverly Hills, CA 90210",
-    fullAddress: "742 Evergreen Botanical Gardens, High Street, Beverly Hills, CA 90210",
-    
-    // Paste any Google Maps embed link or place search
-    mapsEmbedUrl: "https://www.google.com/maps/embed?...",
-    mapsDirectLink: "https://maps.google.com/?q=Your+Venue+Name"
-  },
-
-  // 4. Music Track
-  audio: {
-    musicSrc: "assets/audio/music.mp3",
-    title: "Gymnopédie No. 1 - Romantic Piano"
-  },
-
-  // 5. Photos & Captions
-  photos: [
-    {
-      src: "assets/images/couple-1.jpg",
-      caption: "Where our journey began ✨",
-      date: "Spring 2022"
-    },
-    ...
-  ]
-};
-```
-
-### Adding Your Own Photos:
-Drop your photos into `assets/images/` and update the paths in `config.js`.
-
-### Adding Your Own Song:
-Drop your `.mp3` file into `assets/audio/` and update `musicSrc` in `config.js`.
-
----
-
-## 🌐 Free 1-Click Hosting & Sharing With Guests
-
-You can host this website online for free so guests can open it anywhere via WhatsApp, SMS, or QR code:
-
-1. **GitHub Pages (Free)**:
-   - Push this repository to GitHub.
-   - Go to **Settings** > **Pages** > Select `main` branch > Click **Save**.
-   - Your invite is live at `https://<username>.github.io/<repo-name>`.
-2. **Vercel / Netlify (Free)**:
-   - Drag and drop the `wedding-digital-invite` folder directly into [Netlify Drop](https://app.netlify.com/drop) or [Vercel](https://vercel.com).
-   - Instant custom link with free SSL certificate!
+This repository is deployed with GitHub Pages:
+👉 **[https://gahlodshiva-ctrl.github.io/wedding-digital-invite/](https://gahlodshiva-ctrl.github.io/wedding-digital-invite/)**
